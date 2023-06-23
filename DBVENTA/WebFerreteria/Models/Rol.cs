@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace WebFerreteria.Models;
+
+public partial class Rol
+{
+    public int Id { get; set; }
+
+    public string? Descripcion { get; set; }
+
+    public string? UsuarioRegistro { get; set; }
+
+    public DateTime? FechaRegistro { get; set; }
+
+    public bool? RegistroActivo { get; set; }
+
+    public virtual ICollection<RolMenu> RolMenus { get; set; } = new List<RolMenu>();
+
+    public virtual ICollection<Usuario> Usuarios { get; set; } = new List<Usuario>();
+}
