@@ -22,7 +22,7 @@ namespace WebFerreteria.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.Categoria != null ? 
-                          View(await _context.Categoria.ToListAsync()) :
+                          View(await _context.Categoria.Where(x => x.RegistroActivo.Value).ToListAsync()) :
                           Problem("Entity set 'DbventaContext.Categoria'  is null.");
         }
 
@@ -59,6 +59,7 @@ namespace WebFerreteria.Controllers
         {
             if (ModelState.IsValid)
             {
+                categoria.UsuarioRegistro = User.Identity?.Name;
                 _context.Add(categoria);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -98,6 +99,7 @@ namespace WebFerreteria.Controllers
             {
                 try
                 {
+                    categoria.UsuarioRegistro = User.Identity?.Name;
                     _context.Update(categoria);
                     await _context.SaveChangesAsync();
                 }
@@ -147,7 +149,10 @@ namespace WebFerreteria.Controllers
             var categoria = await _context.Categoria.FindAsync(id);
             if (categoria != null)
             {
-                _context.Categoria.Remove(categoria);
+                //_context.Productos.Remove(producto)
+                categoria.RegistroActivo = false;
+                categoria.UsuarioRegistro = User.Identity?.Name;
+                _context.Update(categoria);
             }
             
             await _context.SaveChangesAsync();
