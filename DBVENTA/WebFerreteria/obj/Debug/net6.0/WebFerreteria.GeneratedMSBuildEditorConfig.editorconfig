@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\asoig\OneDrive\Escritorio\PROYECTO FINAL SIS457 FERRETEERIA\DBVENTA\WebFerreteria
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/asoig/OneDrive/Escritorio/PROYECTO FINAL SIS457 FERRETEERIA/DBVENTA/WebFerreteria/Views/Categorias/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asoig/OneDrive/Escritorio/PROYECTO FINAL SIS457 FERRETEERIA/DBVENTA/WebFerreteria/Views/Categorias/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asoig/OneDrive/Escritorio/PROYECTO FINAL SIS457 FERRETEERIA/DBVENTA/WebFerreteria/Views/Categorias/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asoig/OneDrive/Escritorio/PROYECTO FINAL SIS457 FERRETEERIA/DBVENTA/WebFerreteria/Views/Categorias/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asoig/OneDrive/Escritorio/PROYECTO FINAL SIS457 FERRETEERIA/DBVENTA/WebFerreteria/Views/Categorias/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/asoig/OneDrive/Escritorio/PROYECTO FINAL SIS457 FERRETEERIA/DBVENTA/WebFerreteria/Views/DashBoard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaEJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -26,6 +46,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/asoig/OneDrive/Escritorio/PROYECTO FINAL SIS457 FERRETEERIA/DBVENTA/WebFerreteria/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asoig/OneDrive/Escritorio/PROYECTO FINAL SIS457 FERRETEERIA/DBVENTA/WebFerreteria/Views/Productos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asoig/OneDrive/Escritorio/PROYECTO FINAL SIS457 FERRETEERIA/DBVENTA/WebFerreteria/Views/Productos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asoig/OneDrive/Escritorio/PROYECTO FINAL SIS457 FERRETEERIA/DBVENTA/WebFerreteria/Views/Productos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asoig/OneDrive/Escritorio/PROYECTO FINAL SIS457 FERRETEERIA/DBVENTA/WebFerreteria/Views/Productos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asoig/OneDrive/Escritorio/PROYECTO FINAL SIS457 FERRETEERIA/DBVENTA/WebFerreteria/Views/Productos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/asoig/OneDrive/Escritorio/PROYECTO FINAL SIS457 FERRETEERIA/DBVENTA/WebFerreteria/Views/Shared/Error.cshtml]

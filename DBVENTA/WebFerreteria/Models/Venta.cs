@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace WebFerreteria.Models;
 
-public partial class Ventum
+public partial class Venta
 {
     public int Id { get; set; }
 
@@ -29,9 +29,9 @@ public partial class Ventum
 
     public bool? RegistroActivo { get; set; }
 
-    public virtual ICollection<DetalleVentum> DetalleVenta { get; set; } = new List<DetalleVentum>();
+    public virtual ICollection<DetalleVenta> DetalleVenta { get; set; } = new List<DetalleVenta>();
 
-    public virtual TipoDocumentoVentum? IdTipoDocumentoVentaNavigation { get; set; }
+    public virtual TipoDocumentoVenta? IdTipoDocumentoVentaNavigation { get; set; }
 
     public virtual Usuario? IdUsuarioNavigation { get; set; }
 }

@@ -25,5 +25,5 @@ public partial class Producto
 
     public bool? RegistroActivo { get; set; }
 
-    public virtual Categorium? IdCategoriaNavigation { get; set; }
+    public virtual Categoria? IdCategoriaNavigation { get; set; }
 }

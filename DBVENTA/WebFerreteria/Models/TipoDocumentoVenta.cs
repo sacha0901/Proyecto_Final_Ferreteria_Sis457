@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace WebFerreteria.Models;
 
-public partial class TipoDocumentoVentum
+public partial class TipoDocumentoVenta
 {
     public int Id { get; set; }
 
@@ -15,5 +15,5 @@ public partial class TipoDocumentoVentum
 
     public bool? RegistroActivo { get; set; }
 
-    public virtual ICollection<Ventum> Venta { get; set; } = new List<Ventum>();
+    public virtual ICollection<Venta> Venta { get; set; } = new List<Venta>();
 }
