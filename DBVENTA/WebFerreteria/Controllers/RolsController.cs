@@ -9,90 +9,87 @@ using WebFerreteria.Models;
 
 namespace WebFerreteria.Controllers
 {
-    public class ProductosController : Controller
+    public class RolsController : Controller
     {
         private readonly DbventaContext _context;
 
-        public ProductosController(DbventaContext context)
+        public RolsController(DbventaContext context)
         {
             _context = context;
         }
 
-        // GET: Productos
+        // GET: Rols
         public async Task<IActionResult> Index()
         {
-            var dbventaContext = _context.Productos.Include(p => p.IdCategoriaNavigation);
-            return View(await dbventaContext.ToListAsync());
+              return _context.Rols != null ? 
+                          View(await _context.Rols.ToListAsync()) :
+                          Problem("Entity set 'DbventaContext.Rols'  is null.");
         }
 
-        // GET: Productos/Details/5
+        // GET: Rols/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Productos == null)
+            if (id == null || _context.Rols == null)
             {
                 return NotFound();
             }
 
-            var producto = await _context.Productos
-                .Include(p => p.IdCategoriaNavigation)
+            var rol = await _context.Rols
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (producto == null)
+            if (rol == null)
             {
                 return NotFound();
             }
 
-            return View(producto);
+            return View(rol);
         }
 
-        // GET: Productos/Create
+        // GET: Rols/Create
         public IActionResult Create()
         {
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Descripcion");
             return View();
         }
 
-        // POST: Productos/Create
+        // POST: Rols/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CodigoBarra,Marca,Descripcion,IdCategoria,Stock,Precio,UsuarioRegistro,FechaRegistro,RegistroActivo")] Producto producto)
+        public async Task<IActionResult> Create([Bind("Id,Descripcion,UsuarioRegistro,FechaRegistro,RegistroActivo")] Rol rol)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(producto);
+                _context.Add(rol);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Descripcion", producto.IdCategoria);
-            return View(producto);
+            return View(rol);
         }
 
-        // GET: Productos/Edit/5
+        // GET: Rols/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Productos == null)
+            if (id == null || _context.Rols == null)
             {
                 return NotFound();
             }
 
-            var producto = await _context.Productos.FindAsync(id);
-            if (producto == null)
+            var rol = await _context.Rols.FindAsync(id);
+            if (rol == null)
             {
                 return NotFound();
             }
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Id", producto.IdCategoria);
-            return View(producto);
+            return View(rol);
         }
 
-        // POST: Productos/Edit/5
+        // POST: Rols/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CodigoBarra,Marca,Descripcion,IdCategoria,Stock,Precio,UsuarioRegistro,FechaRegistro,RegistroActivo")] Producto producto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Descripcion,UsuarioRegistro,FechaRegistro,RegistroActivo")] Rol rol)
         {
-            if (id != producto.Id)
+            if (id != rol.Id)
             {
                 return NotFound();
             }
@@ -101,12 +98,12 @@ namespace WebFerreteria.Controllers
             {
                 try
                 {
-                    _context.Update(producto);
+                    _context.Update(rol);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductoExists(producto.Id))
+                    if (!RolExists(rol.Id))
                     {
                         return NotFound();
                     }
@@ -117,51 +114,49 @@ namespace WebFerreteria.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Id", producto.IdCategoria);
-            return View(producto);
+            return View(rol);
         }
 
-        // GET: Productos/Delete/5
+        // GET: Rols/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Productos == null)
+            if (id == null || _context.Rols == null)
             {
                 return NotFound();
             }
 
-            var producto = await _context.Productos
-                .Include(p => p.IdCategoriaNavigation)
+            var rol = await _context.Rols
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (producto == null)
+            if (rol == null)
             {
                 return NotFound();
             }
 
-            return View(producto);
+            return View(rol);
         }
 
-        // POST: Productos/Delete/5
+        // POST: Rols/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Productos == null)
+            if (_context.Rols == null)
             {
-                return Problem("Entity set 'DbventaContext.Productos'  is null.");
+                return Problem("Entity set 'DbventaContext.Rols'  is null.");
             }
-            var producto = await _context.Productos.FindAsync(id);
-            if (producto != null)
+            var rol = await _context.Rols.FindAsync(id);
+            if (rol != null)
             {
-                _context.Productos.Remove(producto);
+                _context.Rols.Remove(rol);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProductoExists(int id)
+        private bool RolExists(int id)
         {
-          return (_context.Productos?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Rols?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

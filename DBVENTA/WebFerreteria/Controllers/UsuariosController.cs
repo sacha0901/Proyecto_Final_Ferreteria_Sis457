@@ -9,90 +9,90 @@ using WebFerreteria.Models;
 
 namespace WebFerreteria.Controllers
 {
-    public class ProductosController : Controller
+    public class UsuariosController : Controller
     {
         private readonly DbventaContext _context;
 
-        public ProductosController(DbventaContext context)
+        public UsuariosController(DbventaContext context)
         {
             _context = context;
         }
 
-        // GET: Productos
+        // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-            var dbventaContext = _context.Productos.Include(p => p.IdCategoriaNavigation);
+            var dbventaContext = _context.Usuarios.Include(u => u.IdRolNavigation);
             return View(await dbventaContext.ToListAsync());
         }
 
-        // GET: Productos/Details/5
+        // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Productos == null)
+            if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
             }
 
-            var producto = await _context.Productos
-                .Include(p => p.IdCategoriaNavigation)
+            var usuario = await _context.Usuarios
+                .Include(u => u.IdRolNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (producto == null)
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            return View(producto);
+            return View(usuario);
         }
 
-        // GET: Productos/Create
+        // GET: Usuarios/Create
         public IActionResult Create()
         {
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Descripcion");
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id");
             return View();
         }
 
-        // POST: Productos/Create
+        // POST: Usuarios/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CodigoBarra,Marca,Descripcion,IdCategoria,Stock,Precio,UsuarioRegistro,FechaRegistro,RegistroActivo")] Producto producto)
+        public async Task<IActionResult> Create([Bind("Id,Usuario1,Correo,Telefono,IdRol,Clave,UsuarioRegistro,FechaRegistro,RegistroActivo")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(producto);
+                _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Descripcion", producto.IdCategoria);
-            return View(producto);
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id", usuario.IdRol);
+            return View(usuario);
         }
 
-        // GET: Productos/Edit/5
+        // GET: Usuarios/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Productos == null)
+            if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
             }
 
-            var producto = await _context.Productos.FindAsync(id);
-            if (producto == null)
+            var usuario = await _context.Usuarios.FindAsync(id);
+            if (usuario == null)
             {
                 return NotFound();
             }
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Id", producto.IdCategoria);
-            return View(producto);
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id", usuario.IdRol);
+            return View(usuario);
         }
 
-        // POST: Productos/Edit/5
+        // POST: Usuarios/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CodigoBarra,Marca,Descripcion,IdCategoria,Stock,Precio,UsuarioRegistro,FechaRegistro,RegistroActivo")] Producto producto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Usuario1,Correo,Telefono,IdRol,Clave,UsuarioRegistro,FechaRegistro,RegistroActivo")] Usuario usuario)
         {
-            if (id != producto.Id)
+            if (id != usuario.Id)
             {
                 return NotFound();
             }
@@ -101,12 +101,12 @@ namespace WebFerreteria.Controllers
             {
                 try
                 {
-                    _context.Update(producto);
+                    _context.Update(usuario);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductoExists(producto.Id))
+                    if (!UsuarioExists(usuario.Id))
                     {
                         return NotFound();
                     }
@@ -117,51 +117,51 @@ namespace WebFerreteria.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Id", producto.IdCategoria);
-            return View(producto);
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id", usuario.IdRol);
+            return View(usuario);
         }
 
-        // GET: Productos/Delete/5
+        // GET: Usuarios/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Productos == null)
+            if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
             }
 
-            var producto = await _context.Productos
-                .Include(p => p.IdCategoriaNavigation)
+            var usuario = await _context.Usuarios
+                .Include(u => u.IdRolNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (producto == null)
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            return View(producto);
+            return View(usuario);
         }
 
-        // POST: Productos/Delete/5
+        // POST: Usuarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Productos == null)
+            if (_context.Usuarios == null)
             {
-                return Problem("Entity set 'DbventaContext.Productos'  is null.");
+                return Problem("Entity set 'DbventaContext.Usuarios'  is null.");
             }
-            var producto = await _context.Productos.FindAsync(id);
-            if (producto != null)
+            var usuario = await _context.Usuarios.FindAsync(id);
+            if (usuario != null)
             {
-                _context.Productos.Remove(producto);
+                _context.Usuarios.Remove(usuario);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProductoExists(int id)
+        private bool UsuarioExists(int id)
         {
-          return (_context.Productos?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Usuarios?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

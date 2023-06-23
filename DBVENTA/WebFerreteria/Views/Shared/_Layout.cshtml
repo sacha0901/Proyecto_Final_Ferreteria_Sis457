@@ -26,7 +26,8 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        
+        @if (User.Identity.IsAuthenticated == true)
+        {
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Brand -->
@@ -69,7 +70,7 @@
 
 
                 <!-- Nav Item - Inventario Collapse Menu -->
-              
+                
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInventario">
                             <i class="fas fa-fw fa-clipboard-list"></i>
@@ -122,7 +123,7 @@
                     <button class="rounded-circle border-0" id="sidebarToggle"></button>
                 </div>
             </ul>
-        
+        }
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -131,7 +132,6 @@
             <div id="content">
 
                 <!-- Topbar -->
-               
                 
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -147,10 +147,17 @@
 
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
-
+                                @if (User.Identity?.IsAuthenticated == false)
+                                {
                                     <a asp-controller="Account" asp-action="Login" class="btn btn-primary rounded-pill py-2 px-3">Iniciar Sesión</a>
+                                }
+                                else
+                                {
+                                    @await Html.PartialAsync("_LogoutPartial")
+                                }
 
-                                  
+
+
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                      aria-labelledby="userDropdown">
@@ -212,4 +219,3 @@
 
 </body>
 </html>
-
