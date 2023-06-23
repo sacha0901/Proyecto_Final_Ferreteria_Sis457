@@ -5,10 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<div class="card-header py-3 bg-second-primary">
+    <h6 class="m-0 font-weight-bold text-white">Lista de Productos</h6>
+</div>
+
+<br />
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-success" asp-action="Create"><i class="fas fa-plus-circle"></i>Nuevo Producto </a>
 </p>
 <table class="table">
     <thead>
@@ -29,17 +33,15 @@
                 @Html.DisplayNameFor(model => model.Precio)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.IdCategoriaNavigation)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.UsuarioRegistro)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FechaRegistro)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RegistroActivo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdCategoriaNavigation)
-            </th>
+            
             <th></th>
         </tr>
     </thead>
@@ -62,21 +64,19 @@
                 @Html.DisplayFor(modelItem => item.Precio)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.IdCategoriaNavigation.Id)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.UsuarioRegistro)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FechaRegistro)
             </td>
+            
             <td>
-                @Html.DisplayFor(modelItem => item.RegistroActivo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdCategoriaNavigation.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pencil-alt"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash-alt"></i></a>
             </td>
         </tr>
 }
