@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\asoig\OneDrive\Escritorio\PROYECTO FINAL SIS457 FERRETEERIA\DBVENTA\WebFerreteria
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/asoig/OneDrive/Escritorio/PROYECTO FINAL SIS457 FERRETEERIA/DBVENTA/WebFerreteria/Views/DashBoard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaEJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/asoig/OneDrive/Escritorio/PROYECTO FINAL SIS457 FERRETEERIA/DBVENTA/WebFerreteria/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
