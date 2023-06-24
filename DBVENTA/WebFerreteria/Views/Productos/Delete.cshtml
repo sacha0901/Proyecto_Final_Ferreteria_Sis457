@@ -13,53 +13,54 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CodigoBarra)
+            Código Barra
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CodigoBarra)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Marca)
+            Marca
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Marca)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descripcion)
+           Descripción
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Descripcion)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Stock)
+            Stock
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Stock)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Precio)
+            Precio
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Precio)
         </dd>
+        <dt class="col-sm-2">
+            Categoría
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdCategoriaNavigation.Descripcion)
+        </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UsuarioRegistro)
+           Usuario Registro
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.UsuarioRegistro)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaRegistro)
+            Fecha Registro
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FechaRegistro)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdCategoriaNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdCategoriaNavigation.Id)
-        </dd>
+       
     </dl>
     
     <form asp-action="Delete">

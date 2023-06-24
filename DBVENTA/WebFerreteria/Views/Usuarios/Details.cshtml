@@ -5,63 +5,52 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<h1>Detalle de Usuario</h1>
 
 <div>
-    <h4>Usuario</h4>
+    
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Usuario1)
+           Usuario
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Usuario1)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Correo)
+           Correo Electrónico
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Correo)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Telefono)
+           Teléfono
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Telefono)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Clave)
+        <dt class="col-sm-2">
+           Rol
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Clave)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdRolNavigation.Id)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UsuarioRegistro)
+            Usuario Registro
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.UsuarioRegistro)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaRegistro)
+           Fecha Registro
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FechaRegistro)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RegistroActivo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RegistroActivo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdRolNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdRolNavigation.Id)
-        </dd>
+        
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@Model.Id"><i class="fas fa-pencil-alt"></i></a> |
+    <a asp-action="Index">Volver a la lista</a>
 </div>

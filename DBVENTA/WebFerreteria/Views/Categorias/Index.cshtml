@@ -12,20 +12,15 @@
 <br />
 
 <p>
-    <a class="btn btn-success"  asp-action="Create"><i class="fas fa-plus-circle"></i>Nueva Categoría </a>
+    <a class="btn btn-success"  asp-action="Create"><i class="fas fa-plus-circle"></i></a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioRegistro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaRegistro)
-            </th>
+            <th> Descripción</th>
+            <th> Usuario Registro</th>
+            <th> Fecha Registro</th>
+           
             <th></th>
         </tr>
     </thead>

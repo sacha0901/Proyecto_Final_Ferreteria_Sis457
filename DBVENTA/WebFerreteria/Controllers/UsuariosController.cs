@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using WebFerreteria.Models;
 
 namespace WebFerreteria.Controllers
 {
+    [Authorize]
     public class UsuariosController : Controller
     {
         private readonly DbventaContext _context;
@@ -47,7 +49,7 @@ namespace WebFerreteria.Controllers
         // GET: Usuarios/Create
         public IActionResult Create()
         {
-            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id");
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Descripcion");
             return View();
         }
 
@@ -58,13 +60,14 @@ namespace WebFerreteria.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Usuario1,Correo,Telefono,IdRol,Clave,UsuarioRegistro,FechaRegistro,RegistroActivo")] Usuario usuario)
         {
+            usuario.Clave = AccountController.Encrypt("123456");
             if (ModelState.IsValid)
             {
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id", usuario.IdRol);
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Descripcion", usuario.IdRol);
             return View(usuario);
         }
 
@@ -81,7 +84,7 @@ namespace WebFerreteria.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id", usuario.IdRol);
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Descripcion", usuario.IdRol);
             return View(usuario);
         }
 

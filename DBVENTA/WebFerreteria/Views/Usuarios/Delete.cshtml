@@ -5,66 +5,54 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Delete</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h1>Eliminar Usuario</h1>
+
+<h3>Está seguro que desea dar de baja el usuario?</h3>
 <div>
-    <h4>Usuario</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Usuario1)
+            Usuario
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Usuario1)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Correo)
+            Correo Electrónico
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Correo)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Telefono)
-        </dt>
+           Teléfono
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Telefono)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Clave)
+        <dt class="col-sm-2">
+                Rol
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Clave)
+        <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdRolNavigation.Descripcion)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UsuarioRegistro)
+            Usuario Registro
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.UsuarioRegistro)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaRegistro)
+           Fecha Registro
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FechaRegistro)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RegistroActivo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RegistroActivo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdRolNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdRolNavigation.Id)
-        </dd>
+        
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Index">Volver a la lista</a>
     </form>
 </div>

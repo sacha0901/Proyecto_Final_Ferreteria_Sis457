@@ -12,35 +12,19 @@
 <br />
 
 <p>
-    <a class="btn btn-success" asp-action="Create"><i class="fas fa-plus-circle"></i>Nuevo Producto </a>
+    <a class="btn btn-success" asp-action="Create"><i class="fas fa-plus-circle"></i></a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CodigoBarra)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Marca)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Stock)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Precio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdCategoriaNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioRegistro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaRegistro)
-            </th>
+            <th> Cógigo Barra</th>
+            <th> Marca</th>
+            <th> Descripción</th>
+            <th> Stock</th>
+            <th> Precio</th>
+            <th> Categoría</th>
+            <th> Usuario Registro</th>
+            <th> Fecha Registro</th>
             
             <th></th>
         </tr>
@@ -64,7 +48,7 @@
                 @Html.DisplayFor(modelItem => item.Precio)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdCategoriaNavigation.Id)
+                @Html.DisplayFor(modelItem => item.IdCategoriaNavigation.Descripcion)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UsuarioRegistro)

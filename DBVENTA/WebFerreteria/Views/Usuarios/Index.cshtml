@@ -5,38 +5,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<div class="card-header py-3 bg-second-primary">
+    <h6 class="m-0 font-weight-bold text-white">Lista de Usuarios</h6>
+</div>
+
+<br />
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-success" asp-action="Create"><i class="fas fa-plus-circle"></i></a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Usuario1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Correo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefono)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Clave)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioRegistro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaRegistro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RegistroActivo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdRolNavigation)
-            </th>
+            <th> Usuario</th>
+            <th>Correo Electrónico</th>
+            <th>Telefono</th>
+            <th> Rol</th>
+            <th> Usuario Registro</th>
+            <th> Fecha Registro</th>
             <th></th>
         </tr>
     </thead>
@@ -53,7 +39,7 @@
                 @Html.DisplayFor(modelItem => item.Telefono)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Clave)
+                @Html.DisplayFor(modelItem => item.IdRolNavigation.Descripcion)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UsuarioRegistro)
@@ -61,16 +47,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.FechaRegistro)
             </td>
+            
             <td>
-                @Html.DisplayFor(modelItem => item.RegistroActivo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdRolNavigation.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pencil-alt"></i></a>  |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash-alt"></i></a>
             </td>
         </tr>
 }

@@ -14,10 +14,13 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="Descripcion" class="control-label"></label>
+                <label class="control-label">Descripción</label>
                 <input asp-for="Descripcion" class="form-control" />
                 <span asp-validation-for="Descripcion" class="text-danger"></span>
             </div>
+            <input type="hidden" asp-for="UsuarioRegistro" />
+            <input type="hidden" asp-for="FechaRegistro" />
+            <input type="hidden" asp-for="RegistroActivo" />
             <div class="form-group">
                 <input type="submit" value="Guardar" class="btn btn-primary" />
             </div>
