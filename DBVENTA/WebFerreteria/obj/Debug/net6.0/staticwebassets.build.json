@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "M5Oj+DFl7+qdokqwCXCb0L3FUHJAV/+4GBjAH6y2X3E=",
+  "Hash": "iaJuUqWa4AtruBi61Lm9Bi8z7yuqUbsmJO45I888i7w=",
   "Source": "WebFerreteria",
   "BasePath": "_content/WebFerreteria",
   "Mode": "Default",
@@ -219,6 +219,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\martillo.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\asoig\\OneDrive\\Escritorio\\PROYECTO FINAL SIS457 FERRETEERIA\\DBVENTA\\WebFerreteria\\wwwroot\\img\\miFerreteria.jpg",
+      "SourceId": "WebFerreteria",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\asoig\\OneDrive\\Escritorio\\PROYECTO FINAL SIS457 FERRETEERIA\\DBVENTA\\WebFerreteria\\wwwroot\\",
+      "BasePath": "_content/WebFerreteria",
+      "RelativePath": "img/miFerreteria.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\miFerreteria.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\asoig\\OneDrive\\Escritorio\\PROYECTO FINAL SIS457 FERRETEERIA\\DBVENTA\\WebFerreteria\\wwwroot\\img\\miFerreteria1.png",
+      "SourceId": "WebFerreteria",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\asoig\\OneDrive\\Escritorio\\PROYECTO FINAL SIS457 FERRETEERIA\\DBVENTA\\WebFerreteria\\wwwroot\\",
+      "BasePath": "_content/WebFerreteria",
+      "RelativePath": "img/miFerreteria1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\miFerreteria1.png"
     },
     {
       "Identity": "C:\\Users\\asoig\\OneDrive\\Escritorio\\PROYECTO FINAL SIS457 FERRETEERIA\\DBVENTA\\WebFerreteria\\wwwroot\\img\\undraw_posting_photo.svg",
