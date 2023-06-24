@@ -6,10 +6,14 @@
 }
 
 <div style="margin:50px;">
-    <h1>Login</h1>
+    <div class="card-header py-3 bg-second-primary">
+        <h6 class="m-0 font-weight-bold text-white">Iniciar Sesion</h6>
+    </div>
+    
 
     <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" role="form">
-        <div class="font-weight-bold">Iniciar Sesión</div>
+        
+        <br />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
             <label asp-for="usuario" class="control-label"></label>
