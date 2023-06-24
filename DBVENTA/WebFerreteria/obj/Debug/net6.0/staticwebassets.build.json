@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iMbeXgbFGHOBgud8mZYRXAW8Vf8yKKapyd+Q9wO1xFs=",
+  "Hash": "vRGC0NniKShgWeJj3ykOCsllC5egsCPxdwoDsHy/0d8=",
   "Source": "WebFerreteria",
   "BasePath": "_content/WebFerreteria",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\asoig\\OneDrive\\Escritorio\\PROYECTO FINAL SIS457 FERRETEERIA\\DBVENTA\\WebFerreteria\\wwwroot\\img\\llave-inglesa.png",
+      "SourceId": "WebFerreteria",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\asoig\\OneDrive\\Escritorio\\PROYECTO FINAL SIS457 FERRETEERIA\\DBVENTA\\WebFerreteria\\wwwroot\\",
+      "BasePath": "_content/WebFerreteria",
+      "RelativePath": "img/llave-inglesa.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\llave-inglesa.png"
     },
     {
       "Identity": "C:\\Users\\asoig\\OneDrive\\Escritorio\\PROYECTO FINAL SIS457 FERRETEERIA\\DBVENTA\\WebFerreteria\\wwwroot\\img\\undraw_posting_photo.svg",
